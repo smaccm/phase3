@@ -44,7 +44,7 @@ echo "************************************************************"
 
 mkdir camkes
 cd camkes
-repo init -u https://github.com/smaccm/phase3.git -m repo/default.xml || true
+repo init -u https://github.com/smaccm/phase3.git -m manifests/default.xml || true
 repo sync || true
 repo sync -d || true
 
