@@ -2,7 +2,7 @@
 
 if [[ ! -e main.sh ]]
 then
-    echo "Must be run in phase2/scripts directory"
+    echo "Must be run in phase3/scripts directory"
     exit 1
 fi
 

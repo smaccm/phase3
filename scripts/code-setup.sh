@@ -2,7 +2,7 @@
 
 if [[ ! -e main.sh ]]
 then
-    echo "Must be run in phase2/scripts directory"
+    echo "Must be run in phase3/scripts directory"
     exit 1
 fi
 
@@ -44,7 +44,7 @@ echo "************************************************************"
 
 mkdir camkes
 cd camkes
-repo init -u https://github.com/smaccm/june-drop-odroid-manifest.git -m phase2.xml || true
+repo init -u https://github.com/smaccm/phase3.git -m manifests/default.xml || true
 repo sync || true
 repo sync -d || true
 
