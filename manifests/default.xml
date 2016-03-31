@@ -17,7 +17,7 @@
     />
 
     <remote name="seL4"
-        fetch="."
+        fetch="../seL4"
     />
 
     <remote name="seL4-projects"
@@ -53,6 +53,8 @@
         <linkfile src="capDL-tool" dest="tools/capDL"/>
         <linkfile src="python-capdl-tool" dest="tools/python-capdl"/>
     </project>
+
+    <project name="pruner.git" path="tools/pruner"/>
 
     <project name="seL4_libs.git" path="projects/seL4_libs">
         <linkfile src="libsel4muslcsys" dest="libs/libsel4muslcsys"/>
