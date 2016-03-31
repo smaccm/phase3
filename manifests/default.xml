@@ -54,8 +54,6 @@
         <linkfile src="python-capdl-tool" dest="tools/python-capdl"/>
     </project>
 
-    <project name="pruner.git" path="tools/pruner"/>
-
     <project name="seL4_libs.git" path="projects/seL4_libs">
         <linkfile src="libsel4muslcsys" dest="libs/libsel4muslcsys"/>
         <linkfile src="libsel4platsupport" dest="libs/libsel4platsupport"/>
