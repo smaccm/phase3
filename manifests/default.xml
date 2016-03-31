@@ -11,72 +11,87 @@
   -->
 
 <manifest>
-    <!-- The seL4 remote may not be our current root, so use ..
-         in the fetch path -->
-    <remote name="seL4"
-        fetch="../seL4"
-    />
     <!-- Any repositories not in the seL4 root will be in the current root -->
     <remote name="local"
         fetch="."
     />
- 
-    <remote name="seL4-projects"
-	fetch="../seL4-projects"
+
+    <remote name="seL4"
+        fetch="."
     />
 
-    <!-- we default to repositories in the seL4 root -->
+    <remote name="seL4-projects"
+        fetch="../seL4-projects"
+    />
+
+    <!-- default revision for each project, and name of the remote -->
     <default revision="master"
         remote="seL4"
     />
 
     <!-- list of 'projects' (i.e repositories), path is relative to the path in remote above -->
-    <project name="capdl-loader-app.git" path="apps/capdl-loader-experimental"/>
+    <project name="seL4.git" path="kernel" revision="arm_hyp">
+        <linkfile src="libsel4" dest="libs/libsel4"/>
+    </project>
 
-    <project remote="local" name="seL4.git" path="kernel" revision="arm_hyp" />
+    <project name="seL4_tools.git" path="projects/seL4_tools">
+        <linkfile src="common-tool" dest="tools/common"/>
+        <linkfile src="elfloader-tool" dest="tools/elfloader"/>
+        <linkfile src="kbuild-tool" dest="tools/kbuild"/>
+    </project>
 
-    <project name="elfloader-tool.git" path="tools/elfloader"/>
-    <project name="common-tool.git" path="tools/common"/>
-    <project name="kbuild-tool.git" path="tools/kbuild"/>
-    <project name="camkes-tool.git" path="tools/camkes"/>
-    <project name="capDL-tool.git" path="tools/capDL"/>
-    <project name="python-capdl-tool.git" path="tools/python-capdl"/>
+    <project name="camkes-tool.git" path="tools/camkes">
+        <linkfile src="toplevel.mk" dest="Makefile"/>
+        <linkfile src="Kbuild" dest="Kbuild"/>
+        <linkfile src="libsel4camkes" dest="libs/libsel4camkes"/>
+        <linkfile src="libsel4muslccamkes" dest="libs/libsel4muslccamkes"/>
+        <linkfile src="docs/index.md" dest="README.md"/>
+    </project>
+
+    <project name="capdl.git" path="projects/capdl">
+        <linkfile src="capdl-loader-app" dest="apps/capdl-loader-experimental"/>
+        <linkfile src="capDL-tool" dest="tools/capDL"/>
+        <linkfile src="python-capdl-tool" dest="tools/python-capdl"/>
+    </project>
+
+    <project name="pruner.git" path="tools/pruner"/>
+
+    <project name="seL4_libs.git" path="projects/seL4_libs">
+        <linkfile src="libsel4muslcsys" dest="libs/libsel4muslcsys"/>
+        <linkfile src="libsel4platsupport" dest="libs/libsel4platsupport"/>
+        <linkfile src="libsel4utils" dest="libs/libsel4utils"/>
+        <linkfile src="libsel4sync" dest="libs/libsel4sync"/>
+        <linkfile src="libsel4vspace" dest="libs/libsel4vspace"/>
+        <linkfile src="libsel4vka" dest="libs/libsel4vka"/>
+        <linkfile src="libsel4debug" dest="libs/libsel4debug"/>
+        <linkfile src="libsel4simple" dest="libs/libsel4simple"/>
+        <linkfile src="libsel4simple-default" dest="libs/libsel4simple-default"/>
+        <linkfile src="libsel4bench" dest="libs/libsel4bench"/>
+    </project>
+
+    <project name="util_libs.git" path="projects/util_libs">
+        <linkfile src="libplatsupport" dest="libs/libplatsupport"/>
+        <linkfile src="libcpio" dest="libs/libcpio"/>
+        <linkfile src="libelf" dest="libs/libelf"/>
+        <linkfile src="libutils" dest="libs/libutils"/>
+    </project>
 
     <project name="musllibc.git" path="libs/libmuslc" revision="sel4"/>
-    <project name="libsel4muslcsys.git" path="libs/libsel4muslcsys" revision="master"/>
-    <project name="libsel4muslcsys.git" path="libs/libsel4muslccamkes" revision="camkes"/>
-    <project name="libsel4platsupport.git" path="libs/libsel4platsupport"/>
-    <project name="libplatsupport.git" path="libs/libplatsupport"/>
-    <project name="libcpio.git" path="libs/libcpio"/>
-    <project name="libelf.git" path="libs/libelf"/>
-    <project name="libsel4utils.git" path="libs/libsel4utils"/>
-    <project name="libsel4sync.git" path="libs/libsel4sync"/>
-    <project name="libsel4vspace.git" path="libs/libsel4vspace"/>
-    <project name="libsel4vka.git" path="libs/libsel4vka"/>
-    <project name="libsel4debug.git" path="libs/libsel4debug"/>
-    <project name="libutils.git" path="libs/libutils"/>
-    <project name="libsel4simple.git" path="libs/libsel4simple"/>
-    <project name="libsel4simple-default.git" path="libs/libsel4simple-default"/>
-    <project name="libsel4bench.git" path="libs/libsel4bench"/>
 
-    <project name="libsel4allocman.git" path="libs/libsel4allocman"/>
+    <project remote="seL4-projects" name="global-components.git" path="components"/>
+
+
+    <!-- AJG: which of these do we actually need? -->
+
     <project remote="local" name="libsel4dma.git" path="libs/libsel4dma"/>
     <project remote="local" name="libsel4arm-vmm.git" path="libs/libsel4arm-vmm"/>
     <project remote="local" name="libusbdrivers.git" path="libs/libusbdrivers"/>
     <project remote="seL4-projects" name="libsel4vchan.git" path="libs/libsel4vchan"/>
 
-    <project remote="seL4-projects" name="global-components.git" path="projects/global-components"/>
-
     <project remote="local" name="camkes-arm-vm.git" path="projects/vm">
         <!-- symlinks to make the project structure fit the build system -->
         <linkfile src="../../tools/camkes/toplevel.mk" dest="Makefile"/>
         <linkfile src="../../tools/camkes/Kbuild" dest="Kbuild"/>
-	<!--
-        <linkfile src="Makefile" dest="Makefile"/>
-        <linkfile src="Kbuild" dest="Kbuild"/>
-        <linkfile src="Kconfig" dest="Kconfig"/>
-        <linkfile src="configs" dest="configs"/>
-	-->
         <linkfile src="../../.repo/manifests/manifests/Kconfig" dest="Kconfig"/>
         <linkfile src="../../.repo/manifests/manifests/configs" dest="configs"/>
         <linkfile src="../../tools/camkes/docs/index.md" dest="README.md"/>
