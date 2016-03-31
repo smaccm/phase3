@@ -77,8 +77,8 @@
         <linkfile src="Kconfig" dest="Kconfig"/>
         <linkfile src="configs" dest="configs"/>
 	-->
-        <linkfile src="../../.repo/repo/manifests/Kconfig" dest="Kconfig"/>
-        <linkfile src="../../.repo/repo/manifests/configs" dest="configs"/>
+        <linkfile src="../../.repo/manifests/repo/Kconfig" dest="Kconfig"/>
+        <linkfile src="../../.repo/manifests/repo/configs" dest="configs"/>
         <linkfile src="../../tools/camkes/docs/index.md" dest="README.md"/>
         <linkfile src="../../kernel/libsel4" dest="libs/libsel4"/>
         <linkfile src="../../tools/camkes/libsel4camkes" dest="libs/libsel4camkes"/>
