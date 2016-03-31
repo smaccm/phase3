@@ -46,17 +46,6 @@ menu "Libraries"
 endmenu
 
 menu "Applications"
-    source "apps/capdl-loader-experimental/Kconfig"
-    source "apps/DARPA/Kconfig"
-    source "apps/vm/Kconfig"
-    source "apps/test_uart_active2/Kconfig"
-    source "apps/can/Kconfig"
-    source "apps/timer_kzm/Kconfig"
-    source "apps/timer_odroid/Kconfig"
-    source "apps/vchan-test/Kconfig"
-    source "apps/vchan-test-aadl/Kconfig"
-    source "apps/can_proxy_odroid_test/Kconfig"
-#    source "apps/camera_vm/Kconfig"
     source "apps/smaccmpilot/Kconfig"
 endmenu
 
