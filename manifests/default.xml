@@ -78,10 +78,10 @@
 
     <project name="musllibc.git" path="libs/libmuslc" revision="3.0.x-compatible"/>
 
-    <project remote="seL4-projects" name="global-components.git"
-	     path="components" revision="camkes-2.1.x-compatible"/>
-
 <!-- BEGIN changes from seL4/camkes-manifest -->
+    <project remote="seL4-projects" name="global-components.git"
+	     path="projects/global-components" revision="camkes-2.1.x-compatible"/>
+
     <project name="libsel4allocman.git" path="libs/libsel4allocman"/>
     <project remote="local" name="libsel4dma.git" path="libs/libsel4dma"/>
     <project remote="local" name="libsel4arm-vmm.git" path="libs/libsel4arm-vmm"/>
