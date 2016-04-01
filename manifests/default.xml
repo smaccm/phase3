@@ -11,12 +11,12 @@
   -->
 
 <manifest>
-    <!-- BEGIN changes from seL4/camkes-manifest -->
+<!-- BEGIN changes from seL4/camkes-manifest -->
     <!-- Any repositories not in the seL4 root will be in the current root -->
     <remote name="local" fetch="."/>
 
     <remote name="seL4" fetch="../seL4"/>
-    <!-- END changes from seL4/camkes-manifest -->
+<!-- END changes from seL4/camkes-manifest -->
 
     <remote name="seL4-projects" fetch="../seL4-projects"/>
 
@@ -28,9 +28,11 @@
     <project name="camkes-apps-event--devel.git" path="apps/event" revision="camkes-2.1.x-compatible"/>
     <project name="camkes-apps-dataport--devel.git" path="apps/dataport" revision="camkes-2.1.x-compatible"/>
 
-    <project name="seL4.git" path="kernel" revision="refs/tags/3.0.0">
+<!-- BEGIN changes from seL4/camkes-manifest -->
+    <project name="seL4.git" path="kernel" revision="arm_hyp">
         <linkfile src="libsel4" dest="libs/libsel4"/>
     </project>
+<!-- END changes from seL4/camkes-manifest -->
 
     <project name="seL4_tools.git" path="projects/seL4_tools" revision="3.0.x-compatible">
         <linkfile src="common-tool" dest="tools/common"/>
@@ -79,7 +81,7 @@
     <project remote="seL4-projects" name="global-components.git" path="components" revision="camkes-2.1.x-compatible"/>
 
 
-    <!-- BEGIN changes from seL4/camkes-manifest -->
+<!-- BEGIN changes from seL4/camkes-manifest -->
     <project name="libsel4allocman.git" path="libs/libsel4allocman"/>
     <project remote="local" name="libsel4dma.git" path="libs/libsel4dma"/>
     <project remote="local" name="libsel4arm-vmm.git" path="libs/libsel4arm-vmm"/>
@@ -109,6 +111,6 @@
         <linkfile src="libs/libsmaccmpilot" dest="libs/libsmaccmpilot"/>
         <linkfile src="libs/libcan_proxy_odroid_test" dest="libs/libcan_proxy_odroid_test"/>
     </project>
-    <!-- END changes from seL4/camkes-manifest -->
+<!-- END changes from seL4/camkes-manifest -->
 </manifest>
 
