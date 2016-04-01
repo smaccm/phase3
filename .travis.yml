@@ -31,7 +31,6 @@ addons:
       - libxml2-utils
       - uboot-mkimage
       - python2.7-dev
-      - python-six
 
 before_install:
   # Add paths for Haskell tools
