@@ -78,12 +78,10 @@
 
     <project name="musllibc.git" path="libs/libmuslc" revision="3.0.x-compatible"/>
 
-<!-- BEGIN changes from seL4/camkes-manifest -->
     <project remote="seL4-projects" name="global-components.git"
-	     path="components" revision="camkes-2.1.x-compatible">
-      <linkfile src="templates" dest="projects/templates"/> -->
-    </project>	    
+	     path="components" revision="camkes-2.1.x-compatible"/>
 
+<!-- BEGIN changes from seL4/camkes-manifest -->
     <project name="libsel4allocman.git" path="libs/libsel4allocman"/>
     <project remote="local" name="libsel4dma.git" path="libs/libsel4dma"/>
     <project remote="local" name="libsel4arm-vmm.git" path="libs/libsel4arm-vmm"/>
@@ -110,6 +108,8 @@
         <linkfile src="apps/can_proxy_odroid_test" dest="apps/can_proxy_odroid_test"/>
         <linkfile src="apps/smaccmpilot" dest="apps/smaccmpilot"/>
         <!-- <linkfile src="templates" dest="projects/templates"/> -->
+	<linkfile src="templates/seL4TimeServer-to.template.c" dest="projects/templates/seL4TimeServer-to.template.c"/>
+	<linkfile src="templates/seL4TimeServer-from.template.c" dest="projects/templates/seL4TimeServer-from.template.c"/>
         <linkfile src="libs/libsmaccmpilot" dest="libs/libsmaccmpilot"/>
         <linkfile src="libs/libcan_proxy_odroid_test" dest="libs/libcan_proxy_odroid_test"/>
     </project>
