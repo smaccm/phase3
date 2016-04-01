@@ -69,7 +69,8 @@ sudo apt-get -y --force-yes install \
     python-pip \
     libxml2-utils \
     uboot-mkimage \
-    python2.7-dev
+    python2.7-dev \
+    python-six
 
 echo "************************************************************"
 echo "Install stack"
