@@ -24,9 +24,9 @@
     <default revision="master" remote="seL4"/>
 
     <!-- list of 'projects' (i.e repositories), path is relative to the path in remote above -->
-    <project name="camkes-apps-simple--devel.git" path="apps/simple">
-    <project name="camkes-apps-event--devel.git" path="apps/event">
-    <project name="camkes-apps-dataport--devel.git" path="apps/dataport">
+    <project name="camkes-apps-simple--devel.git" path="apps/simple"/>
+    <project name="camkes-apps-event--devel.git" path="apps/event"/>
+    <project name="camkes-apps-dataport--devel.git" path="apps/dataport"/>
 
 <!-- BEGIN changes from seL4/camkes-manifest -->
     <project name="seL4.git" path="kernel">
@@ -76,11 +76,10 @@
         <linkfile src="libutils" dest="libs/libutils"/>
     </project>
 
-    <project name="musllibc.git" path="libs/libmuslc">
+    <project name="musllibc.git" path="libs/libmuslc"/>
 
-<!-- BEGIN changes from seL4/camkes-manifest -->
     <project remote="seL4-projects" name="global-components.git"
-	     path="projects/global-components">
+	     path="projects/global-components"/>
 
     <project name="libsel4allocman.git" path="libs/libsel4allocman"/>
     <project remote="local" name="libsel4dma.git" path="libs/libsel4dma"/>
@@ -115,6 +114,5 @@
   <project name="smaccm.git" path="projects/smaccm" remote="local" revision="develop">
     <linkfile dest="apps/smaccmpilot" src="models/Minitower"/>
   </project>
-<!-- END changes from seL4/camkes-manifest -->
 </manifest>
 
