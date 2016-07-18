@@ -41,7 +41,6 @@ menu "Libraries"
     source "libs/libsel4allocman/Kconfig"
     source "libs/libusbdrivers/Kconfig"
     source "libs/libsel4vchan/Kconfig"
-    source "libs/libsmaccmpilot/Kconfig"
     source "libs/libcan_proxy_odroid_test/Kconfig"
 endmenu
 
