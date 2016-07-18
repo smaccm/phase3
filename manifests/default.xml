@@ -76,7 +76,7 @@
         <linkfile src="libutils" dest="libs/libutils"/>
     </project>
 
-    <project name="musllibc.git" path="libs/libmuslc"/>
+    <project name="musllibc.git" path="libs/libmuslc" revision="sel4"/>
 
     <project remote="seL4-projects" name="global-components.git"
 	     path="projects/global-components"/>
