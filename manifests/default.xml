@@ -112,7 +112,7 @@
         <linkfile src="libs/libcan_proxy_odroid_test" dest="libs/libcan_proxy_odroid_test"/>
     </project>
 
-  <project name="smaccm.git" path="projects/smaccm" remote="local" upstream="develop">
+  <project name="smaccm.git" path="projects/smaccm" remote="local" revision="develop">
     <linkfile dest="apps/smaccmpilot" src="models/Minitower"/>
   </project>
 <!-- END changes from seL4/camkes-manifest -->
