@@ -106,13 +106,15 @@
         <linkfile src="apps/timer_kzm" dest="apps/timer_kzm"/>
         <linkfile src="apps/timer_odroid" dest="apps/timer_odroid"/>
         <linkfile src="apps/can_proxy_odroid_test" dest="apps/can_proxy_odroid_test"/>
-        <linkfile src="apps/smaccmpilot" dest="apps/smaccmpilot"/>
         <!-- <linkfile src="templates" dest="projects/templates"/> -->
 	<linkfile src="templates/seL4TimeServer-to.template.c" dest="projects/templates/seL4TimeServer-to.template.c"/>
 	<linkfile src="templates/seL4TimeServer-from.template.c" dest="projects/templates/seL4TimeServer-from.template.c"/>
-        <linkfile src="libs/libsmaccmpilot" dest="libs/libsmaccmpilot"/>
         <linkfile src="libs/libcan_proxy_odroid_test" dest="libs/libcan_proxy_odroid_test"/>
     </project>
+
+  <project name="smaccm.git" path="projects/smaccm" remote="local" upstream="develop">
+    <linkfile dest="apps/smaccmpilot" src="models/Minitower"/>
+  </project>
 <!-- END changes from seL4/camkes-manifest -->
 </manifest>
 
