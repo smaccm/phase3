@@ -45,6 +45,7 @@ menu "Libraries"
 endmenu
 
 menu "Applications"
+    source "apps/capdl-loader-experimental/Kconfig"
     source "apps/smaccmpilot/Kconfig"
 endmenu
 
