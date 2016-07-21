@@ -11,28 +11,15 @@
   -->
 
 <manifest>
-<!-- BEGIN changes from seL4/camkes-manifest -->
     <!-- Any repositories not in the seL4 root will be in the current root -->
     <remote name="local" fetch="."/>
-
     <remote name="seL4" fetch="../seL4"/>
-<!-- END changes from seL4/camkes-manifest -->
-
     <remote name="seL4-projects" fetch="../seL4-projects"/>
-
-    <!-- default revision for each project, and name of the remote -->
     <default revision="master" remote="seL4"/>
 
-    <!-- list of 'projects' (i.e repositories), path is relative to the path in remote above -->
-    <project name="camkes-apps-simple--devel.git" path="apps/simple"/>
-    <project name="camkes-apps-event--devel.git" path="apps/event"/>
-    <project name="camkes-apps-dataport--devel.git" path="apps/dataport"/>
-
-<!-- BEGIN changes from seL4/camkes-manifest -->
     <project name="seL4.git" path="kernel">
         <linkfile src="libsel4" dest="libs/libsel4"/>
     </project>
-<!-- END changes from seL4/camkes-manifest -->
 
     <project name="seL4_tools.git" path="projects/seL4_tools">
         <linkfile src="common-tool" dest="tools/common"/>
@@ -93,26 +80,20 @@
         <linkfile src="../../tools/camkes/Kbuild" dest="Kbuild"/>
         <linkfile src="../../.repo/manifests/manifests/Kconfig" dest="Kconfig"/>
         <linkfile src="../../.repo/manifests/manifests/configs" dest="configs"/>
-        <linkfile src="../../tools/camkes/docs/index.md" dest="README.md"/>
         <linkfile src="../../kernel/libsel4" dest="libs/libsel4"/>
         <linkfile src="../../tools/camkes/libsel4camkes" dest="libs/libsel4camkes"/>
-        <linkfile src="apps/vm" dest="apps/vm"/>
     </project>
 
    <project remote="local" name="camkes-apps-DARPA--devel.git" path="projects/DARPA">
-        <!-- symlinks to make the project structure fit the build system -->
-        <linkfile src="apps/DARPA" dest="apps/DARPA"/>
-        <linkfile src="apps/timer_kzm" dest="apps/timer_kzm"/>
-        <linkfile src="apps/timer_odroid" dest="apps/timer_odroid"/>
-        <linkfile src="apps/can_proxy_odroid_test" dest="apps/can_proxy_odroid_test"/>
-        <!-- <linkfile src="templates" dest="projects/templates"/> -->
-	<linkfile src="templates/seL4TimeServer-to.template.c" dest="projects/templates/seL4TimeServer-to.template.c"/>
-	<linkfile src="templates/seL4TimeServer-from.template.c" dest="projects/templates/seL4TimeServer-from.template.c"/>
+	<linkfile src="templates/seL4TimeServer-to.template.c"
+		  dest="projects/templates/seL4TimeServer-to.template.c"/>
+	<linkfile src="templates/seL4TimeServer-from.template.c"
+		  dest="projects/templates/seL4TimeServer-from.template.c"/>
         <linkfile src="libs/libcan_proxy_odroid_test" dest="libs/libcan_proxy_odroid_test"/>
     </project>
 
-  <project name="smaccm.git" path="projects/smaccm" remote="local" revision="develop">
-    <linkfile dest="apps/smaccmpilot" src="models/Minitower"/>
-  </project>
+    <project name="smaccm.git" path="projects/smaccm" remote="local" revision="develop">
+        <linkfile dest="apps/smaccmpilot" src="models/Minitower"/>
+    </project>
 </manifest>
 
