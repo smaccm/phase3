@@ -44,7 +44,7 @@ echo "Build kernel image via camkes"
 echo "************************************************************"
 
 cd camkes
-make smaccmpilot_defconfig
+make smaccmpilot_debug_defconfig
 make
 
 cd images
