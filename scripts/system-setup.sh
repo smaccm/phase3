@@ -19,10 +19,11 @@ echo "Install remaining cabal packages"
 echo "************************************************************"
 
 cabal update
-cabal install MissingH
+cabal install 'MissingH == 1.3.*'
 cabal install data-ordlist
 cabal install split
 cabal install mtl
+cabal install base-compat-0.9.0
 
 
 echo "************************************************************"
