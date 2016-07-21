@@ -12,7 +12,7 @@
 
 <manifest>
     <!-- Any repositories not in the seL4 root will be in the current root -->
-    <remote name="local" fetch="."/>
+    <remote name="smaccm" fetch="."/>
     <remote name="seL4" fetch="../seL4"/>
     <remote name="seL4-projects" fetch="../seL4-projects"/>
     <default revision="master" remote="seL4"/>
@@ -25,14 +25,6 @@
         <linkfile src="common-tool" dest="tools/common"/>
         <linkfile src="elfloader-tool" dest="tools/elfloader"/>
         <linkfile src="kbuild-tool" dest="tools/kbuild"/>
-    </project>
-
-    <project name="camkes-tool.git" remote="local" path="tools/camkes">
-        <linkfile src="toplevel.mk" dest="Makefile"/>
-        <linkfile src="Kbuild" dest="Kbuild"/>
-        <linkfile src="libsel4camkes" dest="libs/libsel4camkes"/>
-        <linkfile src="libsel4muslccamkes" dest="libs/libsel4muslccamkes"/>
-        <linkfile src="docs/index.md" dest="README.md"/>
     </project>
 
     <project name="capdl.git" path="projects/capdl">
@@ -54,6 +46,7 @@
         <linkfile src="libsel4simple" dest="libs/libsel4simple"/>
         <linkfile src="libsel4simple-default" dest="libs/libsel4simple-default"/>
         <linkfile src="libsel4bench" dest="libs/libsel4bench"/>
+        <linkfile src="libsel4allocman" dest="libs/libsel4allocman"/>
     </project>
 
     <project name="util_libs.git" path="projects/util_libs">
@@ -68,23 +61,30 @@
     <project remote="seL4-projects" name="global-components.git"
 	     path="projects/global-components"/>
 
-    <project name="libsel4allocman.git" path="libs/libsel4allocman"/>
-    <project remote="local" name="libsel4dma.git" path="libs/libsel4dma"/>
-    <project remote="local" name="libsel4arm-vmm.git" path="libs/libsel4arm-vmm"/>
-    <project remote="local" name="libusbdrivers.git" path="libs/libusbdrivers"/>
-    <project remote="seL4-projects" name="libsel4vchan.git" path="libs/libsel4vchan"/>
-
-    <project remote="local" name="camkes-arm-vm.git" path="projects/vm">
-        <!-- symlinks to make the project structure fit the build system -->
-        <linkfile src="../../tools/camkes/toplevel.mk" dest="Makefile"/>
-        <linkfile src="../../tools/camkes/Kbuild" dest="Kbuild"/>
-        <linkfile src="../../.repo/manifests/manifests/Kconfig" dest="Kconfig"/>
-        <linkfile src="../../.repo/manifests/manifests/configs" dest="configs"/>
-        <linkfile src="../../kernel/libsel4" dest="libs/libsel4"/>
-        <linkfile src="../../tools/camkes/libsel4camkes" dest="libs/libsel4camkes"/>
+    <project name="seL4_projects_libs.git" path="projects/seL4_projects_libs" remote="seL4-projects">
+        <linkfile dest="libs/libsel4dma" src="libsel4dma"/>
+        <linkfile dest="libs/libsel4arm-vmm" src="libsel4arm-vmm"/>
+        <linkfile dest="libs/libsel4vchan" src="libsel4vchan"/>
     </project>
 
-   <project remote="local" name="camkes-apps-DARPA--devel.git" path="projects/DARPA">
+    <project name="projects_libs.git" path="projects/projects_libs" remote="seL4-projects">
+        <linkfile dest="libs/libusbdrivers" src="libusbdrivers"/>
+    </project>
+
+    <!-- Custom camkes for reinitializable locks -->
+    <project name="camkes-tool.git" remote="smaccm" path="tools/camkes">
+        <linkfile src="toplevel.mk" dest="Makefile"/>
+        <linkfile src="Kbuild" dest="Kbuild"/>
+        <linkfile src="libsel4camkes" dest="libs/libsel4camkes"/>
+        <linkfile src="libsel4muslccamkes" dest="libs/libsel4muslccamkes"/>
+    </project>
+
+    <project remote="smaccm" name="phase3" path="projects/phase3">
+        <linkfile src="Kconfig" dest="Kconfig"/>
+        <linkfile src="configs" dest="configs"/>
+    </project>
+
+   <project remote="smaccm" name="camkes-apps-DARPA--devel.git" path="projects/DARPA">
 	<linkfile src="templates/seL4TimeServer-to.template.c"
 		  dest="projects/templates/seL4TimeServer-to.template.c"/>
 	<linkfile src="templates/seL4TimeServer-from.template.c"
@@ -92,7 +92,7 @@
         <linkfile src="libs/libcan_proxy_odroid_test" dest="libs/libcan_proxy_odroid_test"/>
     </project>
 
-    <project name="smaccm.git" path="projects/smaccm" remote="local" revision="develop">
+    <project name="smaccm.git" path="projects/smaccm" remote="smaccm" revision="develop">
         <linkfile dest="apps/smaccmpilot" src="models/Minitower"/>
     </project>
 </manifest>
