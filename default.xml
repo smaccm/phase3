@@ -50,7 +50,7 @@
     </project>
 
     <project name="util_libs.git" path="projects/util_libs">
-        <linkfile src="libplatsupport" dest="libs/libplatsupport"/>
+        <!-- <linkfile src="libplatsupport" dest="libs/libplatsupport"/> -->
         <linkfile src="libcpio" dest="libs/libcpio"/>
         <linkfile src="libelf" dest="libs/libelf"/>
         <linkfile src="libutils" dest="libs/libutils"/>
@@ -77,6 +77,11 @@
         <linkfile src="Kbuild" dest="Kbuild"/>
         <linkfile src="libsel4camkes" dest="libs/libsel4camkes"/>
         <linkfile src="libsel4muslccamkes" dest="libs/libsel4muslccamkes"/>
+    </project>
+
+    <!-- Custom libplatsupport to fix UART and CAN bugs -->
+    <project name="util_libs.git" remote="smaccm" path="projects/util_libs_smaccm">
+        <linkfile src="libplatsupport" dest="libs/libplatsupport"/>
     </project>
 
     <project remote="smaccm" name="phase3" path="projects/phase3">
