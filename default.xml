@@ -17,7 +17,10 @@
     <remote name="seL4-projects" fetch="../seL4-projects"/>
     <default revision="master" remote="seL4"/>
 
-    <project name="seL4.git" path="kernel">
+    <!-- TODO: Custom seL4 to fix 'banked registers' issue:
+         https://github.com/seL4/seL4/issues/32
+    -->
+    <project name="seL4.git" path="kernel" remote="smaccm">
         <linkfile src="libsel4" dest="libs/libsel4"/>
     </project>
 
@@ -49,8 +52,12 @@
         <linkfile src="libsel4allocman" dest="libs/libsel4allocman"/>
     </project>
 
-    <project name="util_libs.git" path="projects/util_libs">
-        <!-- <linkfile src="libplatsupport" dest="libs/libplatsupport"/> -->
+    <!-- TODO: Custom util_libs to fix UART and CAN bugs
+         https://github.com/seL4/util_libs/issues/2
+	 https://github.com/seL4/util_libs/issues/3
+    -->
+    <project name="util_libs.git" path="projects/util_libs" remote="smaccm">
+        <linkfile src="libplatsupport" dest="libs/libplatsupport"/>
         <linkfile src="libcpio" dest="libs/libcpio"/>
         <linkfile src="libelf" dest="libs/libelf"/>
         <linkfile src="libutils" dest="libs/libutils"/>
@@ -61,7 +68,10 @@
     <project remote="seL4-projects" name="global-components.git"
 	     path="projects/global-components"/>
 
-    <project name="seL4_projects_libs.git" path="projects/seL4_projects_libs" remote="seL4-projects">
+    <!-- TODO: Custom seL4_project_libs to fix header compilation issue
+	 https://github.com/SEL4PROJ/seL4_projects_libs/issues/1
+    -->
+    <project name="seL4_projects_libs.git" path="projects/seL4_projects_libs" remote="smaccm">
         <linkfile dest="libs/libsel4dma" src="libsel4dma"/>
         <linkfile dest="libs/libsel4arm-vmm" src="libsel4arm-vmm"/>
         <linkfile dest="libs/libsel4vchan" src="libsel4vchan"/>
@@ -79,11 +89,6 @@
         <linkfile src="libsel4muslccamkes" dest="libs/libsel4muslccamkes"/>
     </project>
 
-    <!-- Custom libplatsupport to fix UART and CAN bugs -->
-    <project name="util_libs.git" remote="smaccm" path="projects/util_libs_smaccm">
-        <linkfile src="libplatsupport" dest="libs/libplatsupport"/>
-    </project>
-
     <project remote="smaccm" name="phase3" path="projects/phase3">
         <linkfile src="Kconfig" dest="Kconfig"/>
         <linkfile src="configs" dest="configs"/>
@@ -94,7 +99,6 @@
 		  dest="projects/templates/seL4TimeServer-to.template.c"/>
 	<linkfile src="templates/seL4TimeServer-from.template.c"
 		  dest="projects/templates/seL4TimeServer-from.template.c"/>
-        <linkfile src="libs/libcan_proxy_odroid_test" dest="libs/libcan_proxy_odroid_test"/>
     </project>
 
     <project name="smaccm.git" path="projects/smaccm" remote="smaccm" revision="develop">
