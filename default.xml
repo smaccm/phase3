@@ -68,10 +68,7 @@
     <project remote="seL4-projects" name="global-components.git"
 	     path="projects/global-components"/>
 
-    <!-- TODO: Custom seL4_project_libs to fix header compilation issue
-	 https://github.com/SEL4PROJ/seL4_projects_libs/issues/1
-    -->
-    <project name="seL4_projects_libs.git" path="projects/seL4_projects_libs" remote="smaccm">
+    <project name="seL4_projects_libs.git" path="projects/seL4_projects_libs" remote="seL4-projects">
         <linkfile dest="libs/libsel4dma" src="libsel4dma"/>
         <linkfile dest="libs/libsel4arm-vmm" src="libsel4arm-vmm"/>
         <linkfile dest="libs/libsel4vchan" src="libsel4vchan"/>
