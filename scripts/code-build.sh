@@ -32,11 +32,8 @@ fi
 mv image $BASE_DIR/pixhawk-image
 cd ../..
 
-make smaccmpilot-odroid
-#rm -rf $BASE_DIR/camkes/apps/smaccmpilot
-#cp -r smaccmpilot $BASE_DIR/camkes/apps/smaccmpilot
-#cd $BASE_DIR/camkes/apps/smaccmpilot
-#make
+make smaccmpilot-odroid-mini
+cp -r smaccmpilot-mini/* $BASE_DIR/camkes/apps/smaccmpilot/components
 cd $BASE_DIR
 
 echo "************************************************************"
