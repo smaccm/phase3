@@ -55,6 +55,7 @@ before_install:
   - cabal --version
   - alex --version
   - happy --version
+  - export SMACCM_BRANCH=$TRAVIS_BRANCH
 
 script:
   - cd scripts
