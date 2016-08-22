@@ -17,10 +17,7 @@
     <remote name="seL4-projects" fetch="../seL4-projects"/>
     <default revision="master" remote="seL4"/>
 
-    <!-- TODO: Custom seL4 to fix 'banked registers' issue:
-         https://github.com/seL4/seL4/issues/32
-    -->
-    <project name="seL4.git" path="kernel" remote="smaccm">
+    <project name="seL4.git" path="kernel">
         <linkfile src="libsel4" dest="libs/libsel4"/>
     </project>
 
