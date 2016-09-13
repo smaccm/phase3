@@ -49,11 +49,7 @@
         <linkfile src="libsel4allocman" dest="libs/libsel4allocman"/>
     </project>
 
-    <!-- TODO: Custom util_libs to fix UART and CAN bugs
-         https://github.com/seL4/util_libs/issues/2
-	 https://github.com/seL4/util_libs/issues/3
-    -->
-    <project name="util_libs.git" path="projects/util_libs" remote="smaccm">
+    <project name="util_libs.git" path="projects/util_libs">
         <linkfile src="libplatsupport" dest="libs/libplatsupport"/>
         <linkfile src="libcpio" dest="libs/libcpio"/>
         <linkfile src="libelf" dest="libs/libelf"/>
