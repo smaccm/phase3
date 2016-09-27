@@ -68,8 +68,19 @@ sudo apt-get -y --force-yes install \
     gcc-arm-linux-gnueabi \
     python-pip \
     libxml2-utils \
-    uboot-mkimage \
     python2.7-dev
+
+# check for ubuntu version before installing uboot tools
+string=`lsb_release -c`;
+
+if [[ $string == *"precise"* ]]
+then
+  echo "Ubuntu 12.04";
+  sudo apt-get -y --force-yes install uboot-mkimage
+else
+  echo "Ubuntu > 12.04"
+  sudo apt-get -y --force-yes install u-boot-tools
+fi
 
 echo "************************************************************"
 echo "Install stack"
