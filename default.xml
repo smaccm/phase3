@@ -27,7 +27,7 @@
         <linkfile src="kbuild-tool" dest="tools/kbuild"/>
     </project>
 
-    <project name="capdl.git" path="projects/capdl">
+    <project name="capdl.git" path="projects/capdl" revision="3.2.x-compatible">
         <linkfile src="capdl-loader-app" dest="apps/capdl-loader-experimental"/>
         <linkfile src="capDL-tool" dest="tools/capDL"/>
         <linkfile src="python-capdl-tool" dest="tools/python-capdl"/>
