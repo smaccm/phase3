@@ -67,7 +67,8 @@
 
     <project name="musllibc.git" path="libs/libmuslc" revision="sel4"/>
 
-    <project remote="SEL4PROJ" name="global-components.git" path="projects/global-components"/>
+    <project remote="SEL4PROJ" name="global-components.git"
+             path="projects/global-components" revision="next"/>
 
     <project name="seL4_projects_libs.git" path="projects/seL4_projects_libs" remote="SEL4PROJ">
         <linkfile dest="libs/libsel4dma" src="libsel4dma"/>
@@ -84,8 +85,16 @@
         <linkfile src="configs" dest="configs"/>
     </project>
 
-   <project remote="smaccm" name="camkes-apps-DARPA--devel.git"
-            path="projects/DARPA" revision="next">
+    <project remote="smaccm" name="camkes-apps-DARPA--devel.git"
+             path="projects/DARPA" revision="next">
+	<linkfile src="templates/seL4TimeServer-to.template.c"
+		  dest="projects/templates/seL4TimeServer-to.template.c"/>
+	<linkfile src="templates/seL4TimeServer-from.template.c"
+		  dest="projects/templates/seL4TimeServer-from.template.c"/>
+    </project>
+
+    <project remote="smaccm" name="DARPA-bsp.git"
+             path="projects/DARPA-bsp" revision="time-next">
 	<linkfile src="templates/seL4TimeServer-to.template.c"
 		  dest="projects/templates/seL4TimeServer-to.template.c"/>
 	<linkfile src="templates/seL4TimeServer-from.template.c"
