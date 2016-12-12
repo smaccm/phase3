@@ -32,7 +32,6 @@ addons:
       - libxml2-utils
       - uboot-mkimage
       - python2.7-dev
-      - cmake
       - ninja-build
       - libsqlite3-dev
       - libcunit1-dev
@@ -40,6 +39,9 @@ addons:
       - expect
 
 before_install:
+  # For some reason, Travis doesn't like this listed under 'packages' above
+  - sudo apt-get update -q
+  - sudo apt-get install cmake
   # Add paths for Haskell tools
   - export PATH="/opt/ghc/7.8.4/bin:/opt/cabal/1.22/bin:/opt/alex/3.1.4/bin:/opt/happy/1.19.5/bin:$PATH"
   # Download and unpack the stack executable
