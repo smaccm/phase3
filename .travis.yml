@@ -1,4 +1,4 @@
-sudo: false
+sudo: required
 language: java
 jdk:
   - oraclejdk8
@@ -15,7 +15,6 @@ addons:
       - ubuntu-toolchain-r-test
       - george-edison55-precise-backports
     packages:
-      - cmake
       - ghc-7.8.4
       - cabal-install-1.22
       - alex-3.1.4
@@ -40,6 +39,9 @@ addons:
       - expect
 
 before_install:
+  # For some reason, Travis doesn't like this listed under 'packages' above
+  - sudo apt-get update -q
+  - sudo apt-get install cmake
   # Add paths for Haskell tools
   - export PATH="/opt/ghc/7.8.4/bin:/opt/cabal/1.22/bin:/opt/alex/3.1.4/bin:/opt/happy/1.19.5/bin:$PATH"
   # Download and unpack the stack executable
