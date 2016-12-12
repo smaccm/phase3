@@ -96,7 +96,7 @@
 		  dest="projects/templates/seL4TimeServer-from.template.c"/>
     </project>
 
-    <project name="smaccm.git" path="projects/smaccm" remote="smaccm">
+    <project name="smaccm.git" path="projects/smaccm" remote="smaccm" revision="develop">
         <linkfile dest="apps/smaccmpilot" src="models/Minitower"/>
     </project>
 </manifest>
