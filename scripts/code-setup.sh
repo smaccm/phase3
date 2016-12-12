@@ -41,7 +41,7 @@ cd smaccmpilot-stm32f4
 # TODO: Use official Galois version
 git remote add agacek https://github.com/agacek/smaccmpilot-stm32f4
 git fetch agacek
-git co agacek/master
+git checkout agacek/master
 
 
 echo "************************************************************"
