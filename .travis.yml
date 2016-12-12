@@ -1,4 +1,4 @@
-sudo: required
+sudo: false
 language: java
 jdk:
   - oraclejdk8
@@ -37,11 +37,10 @@ addons:
       - libcunit1-dev
       - clang-3.4
       - expect
+      - cmake
+      - cmake-data
 
 before_install:
-  # For some reason, Travis doesn't like this listed under 'packages' above
-  - sudo apt-get update -q
-  - sudo apt-get install cmake
   # Add paths for Haskell tools
   - export PATH="/opt/ghc/7.8.4/bin:/opt/cabal/1.22/bin:/opt/alex/3.1.4/bin:/opt/happy/1.19.5/bin:$PATH"
   # Download and unpack the stack executable
