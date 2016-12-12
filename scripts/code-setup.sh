@@ -15,11 +15,13 @@ then
     export PATH=`cat PATH`
 fi
 
+# TODO: Find better location for phase3 ramses
 echo "************************************************************"
 echo "Get phase2 repo for ramses.jar"
 echo "************************************************************"
 
 git clone https://github.com/smaccm/phase2
+
 
 echo "************************************************************"
 echo "Get smaccmpilot code"
@@ -28,26 +30,27 @@ echo "************************************************************"
 git clone https://github.com/GaloisInc/smaccmpilot-build.git
 cd smaccmpilot-build
 
+
 echo "************************************************************"
 echo "Configure smaccmpilot code"
 echo "************************************************************"
 
 git checkout ${SMACCM_BRANCH:=master}
 git submodule update --init
-cd smaccmpilot-stm32f4/src/smaccm-flight
-make
-cd $BASE_DIR
+cd smaccmpilot-stm32f4
+# TODO: Use official Galois version
+git remote add agacek https://github.com/agacek/smaccmpilot-stm32f4
+git fetch agacek
+git co agacek/master
+
 
 echo "************************************************************"
 echo "Get camkes code"
 echo "************************************************************"
 
+cd $BASE_DIR
 mkdir camkes
 cd camkes
 repo init -u https://github.com/smaccm/phase3.git || true
 repo sync || true
 repo sync -d || true
-
-cd apps
-echo "RAMSES_PATH=$BASE_DIR/phase2/ramses-demo" > RAMSES_PATH.mk
-
