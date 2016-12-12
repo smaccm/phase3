@@ -13,6 +13,7 @@ addons:
     sources:
       - hvr-ghc
       - ubuntu-toolchain-r-test
+      - george-edison55-precise-backports
     packages:
       - ghc-7.8.4
       - cabal-install-1.22
@@ -31,6 +32,12 @@ addons:
       - libxml2-utils
       - uboot-mkimage
       - python2.7-dev
+      - cmake
+      - ninja-build
+      - libsqlite3-dev
+      - libcunit1-dev
+      - clang-3.4
+      - expect
 
 before_install:
   # Add paths for Haskell tools

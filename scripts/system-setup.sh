@@ -30,7 +30,7 @@ echo "************************************************************"
 echo "Install pip software"
 echo "************************************************************"
 
-pip install --user jinja2 ply pyelftools tempita six
+pip install --user jinja2 ply pyelftools tempita six plyplus orderedset
 
 
 echo "************************************************************"

@@ -30,6 +30,7 @@ sudo apt-get -y install python-software-properties software-properties-common
 sudo add-apt-repository -y ppa:webupd8team/java # java
 sudo add-apt-repository -y ppa:hvr/ghc          # ghc, cabal, happy, alex
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test # gcc-4.8
+sudo add-apt-repository -y ppa:george-edison55/precise-backports # cmake
 sudo apt-get update
 
 
@@ -68,7 +69,13 @@ sudo apt-get -y --force-yes install \
     gcc-arm-linux-gnueabi \
     python-pip \
     libxml2-utils \
-    python2.7-dev
+    python2.7-dev \
+    cmake \
+    ninja-build \
+    libsqlite3-dev \
+    libcunit1-dev \
+    clang-3.4 \
+    expect
 
 # check for ubuntu version before installing uboot tools
 string=`lsb_release -c`;
