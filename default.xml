@@ -86,11 +86,8 @@
     </project>
 
     <project remote="smaccm" name="camkes-apps-DARPA--devel.git"
-             path="projects/DARPA" revision="next"/>
-
-    <project remote="smaccm" name="DARPA-bsp.git"
-             path="projects/DARPA-bsp" revision="time-next">
-	<linkfile src="templates/seL4TimeServer-to.template.c"
+             path="projects/DARPA" revision="next">
+      	<linkfile src="templates/seL4TimeServer-to.template.c"
 		  dest="projects/templates/seL4TimeServer-to.template.c"/>
 	<linkfile src="templates/seL4TimeServer-from.template.c"
 		  dest="projects/templates/seL4TimeServer-from.template.c"/>
