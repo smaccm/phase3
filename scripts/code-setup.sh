@@ -37,11 +37,6 @@ echo "************************************************************"
 
 git checkout ${SMACCM_BRANCH:=master}
 git submodule update --init
-cd smaccmpilot-stm32f4
-# TODO: Use official Galois version
-git remote add agacek https://github.com/agacek/smaccmpilot-stm32f4
-git fetch agacek
-git checkout agacek/master
 
 
 echo "************************************************************"
