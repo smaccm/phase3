@@ -7,6 +7,8 @@ cache:
   directories:
     - $HOME/.gcc-arm-embedded
     - $HOME/.stack
+    - $HOME/.camkes
+    - $HOME/.ccache
 
 addons:
   apt:
