@@ -72,5 +72,5 @@ script:
   - ./main.sh
 
 env:
-  - DEFCONFIG=smaccmpilot
-  - DEFCONFIG=smaccmpilot-tk1
+  - DEFCONFIG=smaccmpilot_defconfig
+  - DEFCONFIG=smaccmpilot-tk1_defconfig
