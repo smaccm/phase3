@@ -72,5 +72,5 @@ script:
   - ./main.sh
 
 env:
-  - DEFCONFIG=smaccmpilot_defconfig
-  - DEFCONFIG=smaccmpilot-tk1_defconfig
+  - DEFCONFIG=smaccmpilot_defconfig IMAGE_NAME=capdl-loader-experimental-image-arm-exynos5
+  - DEFCONFIG=smaccmpilot-tk1_defconfig IMAGE_NAME=capdl-loader-experimental-image-arm-tk1

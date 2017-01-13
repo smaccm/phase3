@@ -45,7 +45,7 @@ make ${DEFCONFIG:-smaccmpilot_defconfig}
 make
 
 cd images
-mkimage -a 0x48000000 -e 0x48000000 -C none -A arm -T kernel -O qnx -d capdl-loader-experimental-image-arm-exynos5 odroid-image
+mkimage -a 0x48000000 -e 0x48000000 -C none -A arm -T kernel -O qnx -d ${IMAGE_NAME:-capdl-loader-experimental-image-arm-exynos5} odroid-image
 
 if [[ ! -e odroid-image ]]
 then
