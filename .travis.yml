@@ -70,3 +70,7 @@ before_install:
 script:
   - cd scripts
   - ./main.sh
+
+env:
+  - DEFCONFIG=smaccmpilot
+  - DEFCONFIG=smaccmpilot-tk1
