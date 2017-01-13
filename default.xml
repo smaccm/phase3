@@ -93,8 +93,11 @@
 		  dest="projects/templates/seL4TimeServer-from.template.c"/>
     </project>
 
+    <project remote="smaccm" name="DARPA-bsp.git" path="projects/DARPA-tk1"/>
+
     <project name="smaccm.git" path="projects/smaccm" remote="smaccm" revision="develop">
         <linkfile dest="apps/smaccmpilot" src="models/Minitower"/>
+        <linkfile dest="apps/smaccmpilot-tk1" src="models/smaccmpilot-tk1"/>
     </project>
 </manifest>
 
