@@ -46,6 +46,7 @@ endmenu
 menu "Applications"
     source "apps/capdl-loader-experimental/Kconfig"
     source "apps/smaccmpilot/Kconfig"
+    source "apps/smaccmpilot-tk1/Kconfig"
 endmenu
 
 source "tools/elfloader/Kconfig"
