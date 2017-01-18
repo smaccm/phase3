@@ -15,7 +15,6 @@
     <remote name="smaccm" fetch="."/>
     <remote name="seL4" fetch="../seL4"/>
     <remote name="SEL4PROJ" fetch="../SEL4PROJ"/>
-    <remote name="agacek" fetch="../agacek"/>
     <default revision="master" remote="seL4"/>
 
     <project name="seL4.git" path="kernel">
@@ -59,8 +58,7 @@
         <linkfile src="libsel4allocman" dest="libs/libsel4allocman"/>
     </project>
 
-    <project name="util_libs.git" path="projects/util_libs"
-             remote="agacek" revision="all">
+    <project name="util_libs.git" path="projects/util_libs">
         <linkfile src="libplatsupport" dest="libs/libplatsupport"/>
         <linkfile src="libcpio" dest="libs/libcpio"/>
         <linkfile src="libelf" dest="libs/libelf"/>
