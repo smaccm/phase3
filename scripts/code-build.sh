@@ -22,14 +22,14 @@ echo "************************************************************"
 
 cd smaccmpilot-build/smaccmpilot-stm32f4/src/smaccm-flight
 
-make platform-fmu24/standalone-flight-gen
-cd platform-fmu24/standalone-flight
-if [[ ! -e image ]]
+make flight_echronos
+cd platform-fmu24/standalone_flight_echronos
+if [[ ! -e image.px4 ]]
 then
     echo "Failed to build Pixhawk image"
     exit 1
 fi
-mv image $BASE_DIR/pixhawk-image
+mv image.px4 $BASE_DIR/pixhawk-image.px4
 cd ../..
 
 make smaccmpilot-odroid-mini
@@ -45,18 +45,16 @@ make ${DEFCONFIG:-smaccmpilot_defconfig}
 make
 
 cd images
-mkimage -a 0x48000000 -e 0x48000000 -C none -A arm -T kernel -O qnx -d ${IMAGE_NAME:-capdl-loader-experimental-image-arm-exynos5} odroid-image
-
-if [[ ! -e odroid-image ]]
+if [[ ! -e capdl-loader-experimental-image-arm-tk1 ]]
 then
-    echo "Failed to build ODROID image"
+    echo "Failed to build TK1 image"
     exit 1
 fi
-mv odroid-image $BASE_DIR/odroid-image
+mv capdl-loader-experimental-image-arm-tk1 $BASE_DIR/tk1-image
 
 echo "************************************************************"
-echo "Pixhawk image: $BASE_DIR/pixhawk-image"
-echo "ODROID image: $BASE_DIR/odroid-image"
+echo "Pixhawk image: $BASE_DIR/pixhawk-image.px4"
+echo "TK1 image: $BASE_DIR/tk1-image"
 echo "************************************************************"
 
 
