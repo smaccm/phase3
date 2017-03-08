@@ -21,6 +21,7 @@ echo "Get phase2 repo for ramses.jar"
 echo "************************************************************"
 
 git clone https://github.com/smaccm/phase2
+ln -s phase2/ramses-demo ramses-demo
 
 
 echo "************************************************************"
