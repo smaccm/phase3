@@ -22,7 +22,7 @@ exec 2>&1
 echo "************************************************************"
 echo "Get git"
 echo "************************************************************"
-
+sudo apt-get install git curl g++ cmake-data
 # Work around Ubuntu APT bug
 sudo rm -rf /var/lib/apt/lists/*
 
