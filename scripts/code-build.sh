@@ -33,7 +33,7 @@ mv image.px4 $BASE_DIR/pixhawk-image.px4
 cd ../..
 
 make smaccmpilot-odroid-mini
-cp -r smaccmpilot-mini/* $BASE_DIR/camkes/apps/smaccmpilot/components
+cp -r smaccmpilot-mini/* $BASE_DIR/camkes/apps/smaccmpilot-tk1/components
 cd $BASE_DIR
 
 echo "************************************************************"

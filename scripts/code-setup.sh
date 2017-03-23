@@ -47,6 +47,7 @@ echo "************************************************************"
 cd $BASE_DIR
 mkdir camkes
 cd camkes
+export GIT_SSL_NO_VERIFY=1
 repo init -u https://github.com/smaccm/phase3.git || true
 repo sync || true
 repo sync -d || true
