@@ -1,6 +1,0 @@
-Try to remove alex and happy
-Switch to using PPA for stack
-What repo manifest for phase3?
-
-Transition to GHC 7.10
-Transition to latest capDL

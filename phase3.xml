@@ -1,40 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <remote fetch="../SEL4PROJ" name="SEL4PROJ"/>
   <remote fetch="../seL4" name="seL4"/>
-  <remote fetch="../seL4-projects" name="seL4-projects"/>
   <remote fetch="." name="smaccm"/>
   
   <default remote="seL4" revision="master"/>
   
-  <project name="camkes-apps-DARPA--devel.git" path="projects/DARPA" remote="smaccm" revision="c112a453afacc7991bc8057edbff63c660255771" upstream="master">
+  <project name="DARPA-bsp.git" path="projects/DARPA-tk1" remote="smaccm" revision="252bf3e9cec456e52cc31acb8c8ba99128a9a2d0" upstream="master"/>
+  <project name="camkes-apps-DARPA--devel.git" path="projects/DARPA" remote="smaccm" revision="9bf6ae8601828cf10da7c81a8e74b9cbe06eb5d8" upstream="next">
     <linkfile dest="projects/templates/seL4TimeServer-to.template.c" src="templates/seL4TimeServer-to.template.c"/>
     <linkfile dest="projects/templates/seL4TimeServer-from.template.c" src="templates/seL4TimeServer-from.template.c"/>
   </project>
-  <project name="camkes-tool.git" path="tools/camkes" remote="smaccm" revision="54ec7a85224b9b49a76029310742bba1b00732fd" upstream="master">
+  <project name="camkes-tool.git" path="tools/camkes" revision="9a5e9187bf235309d17b8214477fdc92150acbcc" upstream="next">
     <linkfile dest="Makefile" src="toplevel.mk"/>
     <linkfile dest="Kbuild" src="Kbuild"/>
     <linkfile dest="libs/libsel4camkes" src="libsel4camkes"/>
     <linkfile dest="libs/libsel4muslccamkes" src="libsel4muslccamkes"/>
+    <linkfile dest="README.md" src="docs/index.md"/>
   </project>
-  <project name="capdl.git" path="projects/capdl" revision="a07d1e7a332697d773e1d7b4e7d9c7a5c852d675" upstream="3.2.x-compatible">
+  <project name="capdl.git" path="projects/capdl" revision="f8f537c908accdd99949bed0edc409724b74a67f" upstream="master">
     <linkfile dest="apps/capdl-loader-experimental" src="capdl-loader-app"/>
     <linkfile dest="tools/capDL" src="capDL-tool"/>
     <linkfile dest="tools/python-capdl" src="python-capdl-tool"/>
   </project>
-  <project name="global-components.git" path="projects/global-components" remote="seL4-projects" revision="409cf837f5713e7fa48db00a0851cb5bdfa650a3" upstream="master"/>
-  <project name="musllibc.git" path="libs/libmuslc" revision="b5c66eef4a8bb274d7a4b9b5b82bce412224dbf9" upstream="sel4"/>
-  <project name="phase3" path="projects/phase3" remote="smaccm" revision="41bdcc1c6bfe9345c30f0ff7c99f1e76c551171f" upstream="master">
+  <project name="global-components.git" path="projects/global-components" remote="SEL4PROJ" revision="cae3729de25b83737a7164f88e9b91c3961f6f3a" upstream="next"/>
+  <project name="musllibc.git" path="libs/libmuslc" revision="558c9df056bac7b08863b2c3d64b06022a2dc49f" upstream="sel4"/>
+  <project name="phase3" path="projects/phase3" remote="smaccm" revision="768e19ebe3fc516dc877bc6c969a3be18a78f6e5" upstream="master">
     <linkfile dest="Kconfig" src="Kconfig"/>
     <linkfile dest="configs" src="configs"/>
   </project>
-  <project name="projects_libs.git" path="projects/projects_libs" remote="seL4-projects" revision="20f73b4219b1481ae7e5709f865df9da5e788101" upstream="master">
+  <project name="projects_libs.git" path="projects/projects_libs" remote="SEL4PROJ" revision="20f73b4219b1481ae7e5709f865df9da5e788101" upstream="master">
     <linkfile dest="libs/libusbdrivers" src="libusbdrivers"/>
   </project>
   <project name="pruner.git" path="tools/pruner" revision="c1f6664f7f0bc04ac60b5e8b41200b1a09da7eda" upstream="master"/>
-  <project name="seL4.git" path="kernel" revision="c464470d6cb408a9c978831062c910dd6005b52d" upstream="master">
+  <project name="seL4.git" path="kernel" revision="941edc0883305316d54aa0f35010939dd74ef2d8" upstream="master">
     <linkfile dest="libs/libsel4" src="libsel4"/>
   </project>
-  <project name="seL4_libs.git" path="projects/seL4_libs" revision="37f1d94a176d8b200f04c31f167527d2e2f17c7a" upstream="master">
+  <project name="seL4_libs.git" path="projects/seL4_libs" revision="395d61eb04889e26319436866a2ce314d8db3f2b" upstream="master">
     <linkfile dest="libs/libsel4muslcsys" src="libsel4muslcsys"/>
     <linkfile dest="libs/libsel4platsupport" src="libsel4platsupport"/>
     <linkfile dest="libs/libsel4utils" src="libsel4utils"/>
@@ -47,20 +49,21 @@
     <linkfile dest="libs/libsel4bench" src="libsel4bench"/>
     <linkfile dest="libs/libsel4allocman" src="libsel4allocman"/>
   </project>
-  <project name="seL4_projects_libs.git" path="projects/seL4_projects_libs" remote="seL4-projects" revision="80055b42ebb60091a6a88b21dfe5b6984ff24089" upstream="master">
+  <project name="seL4_projects_libs.git" path="projects/seL4_projects_libs" remote="SEL4PROJ" revision="bc13ede38f4616ed24d35d1557cde4d021cc72e1" upstream="master">
     <linkfile dest="libs/libsel4dma" src="libsel4dma"/>
     <linkfile dest="libs/libsel4arm-vmm" src="libsel4arm-vmm"/>
     <linkfile dest="libs/libsel4vchan" src="libsel4vchan"/>
   </project>
-  <project name="seL4_tools.git" path="projects/seL4_tools" revision="79251ae58462ef2475e22e7a2ce0a6aa9cf8e38d" upstream="master">
+  <project name="seL4_tools.git" path="projects/seL4_tools" revision="fe5db52215e551771fe6662591edcacd727de0d9" upstream="master">
     <linkfile dest="tools/common" src="common-tool"/>
     <linkfile dest="tools/elfloader" src="elfloader-tool"/>
     <linkfile dest="tools/kbuild" src="kbuild-tool"/>
   </project>
-  <project name="smaccm.git" path="projects/smaccm" remote="smaccm" revision="e8dc03bb8b07b14b787433f248dbf2cc4103c47e" upstream="develop">
+  <project name="smaccm.git" path="projects/smaccm" remote="smaccm" revision="4793c76a008456b4261eba349ad551d2735fec79" upstream="develop">
     <linkfile dest="apps/smaccmpilot" src="models/Minitower"/>
+    <linkfile dest="apps/smaccmpilot-tk1" src="models/smaccmpilot-tk1"/>
   </project>
-  <project name="util_libs.git" path="projects/util_libs" revision="f798673c0c4c96d3f07cd981e6092b7892a0262a" upstream="master">
+  <project name="util_libs.git" path="projects/util_libs" revision="1139f4facb089861aea3661d9be342262d1d6139" upstream="master">
     <linkfile dest="libs/libplatsupport" src="libplatsupport"/>
     <linkfile dest="libs/libcpio" src="libcpio"/>
     <linkfile dest="libs/libelf" src="libelf"/>
