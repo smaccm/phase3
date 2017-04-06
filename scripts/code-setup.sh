@@ -38,6 +38,8 @@ echo "************************************************************"
 
 git checkout ${SMACCM_BRANCH:=master}
 git submodule update --init
+cd smaccmpilot-stm32f4
+git checkout final-demo
 
 
 echo "************************************************************"
@@ -48,6 +50,6 @@ cd $BASE_DIR
 mkdir camkes
 cd camkes
 export GIT_SSL_NO_VERIFY=1
-repo init -u https://github.com/smaccm/phase3.git || true
+repo init -u https://github.com/smaccm/phase3.git -m phase3.xml || true
 repo sync || true
 repo sync -d || true
