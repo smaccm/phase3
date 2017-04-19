@@ -39,7 +39,7 @@ echo "************************************************************"
 git checkout ${SMACCM_BRANCH:=master}
 git submodule update --init
 cd smaccmpilot-stm32f4
-git checkout final-demo
+git checkout master
 
 
 echo "************************************************************"
