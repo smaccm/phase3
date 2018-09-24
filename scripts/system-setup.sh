@@ -29,7 +29,9 @@ cabal install base-compat-0.9.0
 echo "************************************************************"
 echo "Install pip software"
 echo "************************************************************"
-
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+sudo cp /usr/local/bin/pip /usr/bin/pip
 pip install --user jinja2 ply pyelftools tempita six plyplus orderedset
 
 
