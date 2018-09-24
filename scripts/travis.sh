@@ -41,8 +41,8 @@ wget https://downloads.haskell.org/~ghc/7.8.4/ghc-7.8.4-x86_64-unknown-linux-deb
 tar xvjf ghc-7.8.4-x86_64-unknown-linux-deb7.tar.bz2
 cd ghc-7.8.4 && ./configure && sudo make install
 
-sudo apt-get install zlib1g-dev
-sudo apt-get install cabal-install
+sudo apt-get -y install zlib1g-dev
+sudo apt-get -y install cabal-install
 # cabal update # (done in system-setup.sh)
 # cabal install cabal-install
 # ???
