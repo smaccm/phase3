@@ -52,7 +52,7 @@ cabal update
 #cd cabal && git checkout 1.22 && cd cabal-install && ./bootstrap.sh
 
 sudo apt-get install alex # have alex 3.01 instead of alex-3.1.4
-sudo apt-get install happty # gets happy-1.18 instead of happy-1.19.5
+sudo apt-get install happy # gets happy-1.18 instead of happy-1.19.5
 
 
 echo "************************************************************"
@@ -107,6 +107,7 @@ echo "************************************************************"
 echo "Install stack"
 echo "************************************************************"
 mkdir -p $PWD/.local/bin
+sudo apt-get install curl
 curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C $PWD/.local/bin '*/stack'
 
 echo "************************************************************"
