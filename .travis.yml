@@ -32,7 +32,7 @@ addons:
       - realpath
       - python-pip
       - libxml2-utils
-      - uboot-mkimage
+      - u-boot-tools
       - python2.7-dev
       - ninja-build
       - libsqlite3-dev

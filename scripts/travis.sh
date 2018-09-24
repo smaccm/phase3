@@ -43,7 +43,7 @@ cd ghc-7.8.4 && ./configure && sudo make install
 
 sudo apt-get install zlib1g-dev
 sudo apt-get install cabal-install
-cabal update
+# cabal update # (done in system-setup.sh)
 # cabal install cabal-install
 # ???
 
@@ -89,7 +89,8 @@ sudo apt-get -y --force-yes install \
     libsqlite3-dev \
     libcunit1-dev \
     clang-3.4 \
-    expect
+    expect \
+    curl
 
 # check for ubuntu version before installing uboot tools
 string=`lsb_release -c`;
@@ -107,7 +108,6 @@ echo "************************************************************"
 echo "Install stack"
 echo "************************************************************"
 mkdir -p $PWD/.local/bin
-sudo apt-get install curl
 curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C $PWD/.local/bin '*/stack'
 
 echo "************************************************************"
