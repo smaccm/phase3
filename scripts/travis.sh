@@ -37,8 +37,22 @@ sudo apt-get update
 echo "************************************************************"
 echo "Install GHC, Cabal, Alex, Happy"
 echo "************************************************************"
+wget https://downloads.haskell.org/~ghc/7.8.4/ghc-7.8.4-x86_64-unknown-linux-deb7.tar.bz2
+tar xvjf ghc-7.8.4-x86_64-unknown-linux-deb7.tar.bz2
+cd ghc-7.8.4 && ./configure && sudo make install
 
-sudo apt-get install -y ghc-7.8.4 cabal-install-1.22 alex-3.1.4 happy-1.19.5
+sudo apt-get -y install zlib1g-dev
+sudo apt-get -y install cabal-install
+# cabal update # (done in system-setup.sh)
+# cabal install cabal-install
+# ???
+
+#sudo apt-get install libgmp3-dev
+#git clone https://github.com/haskell/cabal.git
+#cd cabal && git checkout 1.22 && cd cabal-install && ./bootstrap.sh
+
+sudo apt-get install alex # have alex 3.01 instead of alex-3.1.4
+sudo apt-get install happy # gets happy-1.18 instead of happy-1.19.5
 
 
 echo "************************************************************"
@@ -75,7 +89,8 @@ sudo apt-get -y --force-yes install \
     libsqlite3-dev \
     libcunit1-dev \
     clang-3.4 \
-    expect
+    expect \
+    curl
 
 # check for ubuntu version before installing uboot tools
 string=`lsb_release -c`;

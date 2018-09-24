@@ -32,7 +32,7 @@ addons:
       - realpath
       - python-pip
       - libxml2-utils
-      - uboot-mkimage
+      - u-boot-tools
       - python2.7-dev
       - ninja-build
       - libsqlite3-dev
@@ -43,6 +43,7 @@ addons:
       - cmake-data
 
 before_install:
+  sudo apt-get update
   # Add paths for Haskell tools
   - export PATH="/opt/ghc/7.8.4/bin:/opt/cabal/1.22/bin:/opt/alex/3.1.4/bin:/opt/happy/1.19.5/bin:$PATH"
   # Download and unpack the stack executable
@@ -65,7 +66,7 @@ before_install:
   - cabal --version
   - alex --version
   - happy --version
-  - export SMACCM_BRANCH=$TRAVIS_BRANCH
+  # - export SMACCM_BRANCH=$TRAVIS_BRANC
 
 script:
   - cd scripts
