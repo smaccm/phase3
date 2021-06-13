@@ -22,7 +22,7 @@
     <linkfile dest="tools/capDL" src="capDL-tool"/>
     <linkfile dest="tools/python-capdl" src="python-capdl-tool"/>
   </project>
-  <project name="global-components.git" path="projects/global-components" remote="seL4" revision="cae3729de25b83737a7164f88e9b91c3961f6f3a" upstream="next"/>
+  <project name="global-components.git" path="projects/global-components" remote="seL4" revision="cae3729de25b83737a7164f88e9b91c3961f6f3a" upstream="master"/>
   <project name="musllibc.git" path="libs/libmuslc" revision="558c9df056bac7b08863b2c3d64b06022a2dc49f" upstream="sel4"/>
   <project name="phase3" path="projects/phase3" remote="smaccm" revision="f2aad8ce9da934fd85089ed3fc503f91b1465a60" upstream="master">
     <linkfile dest="Kconfig" src="Kconfig"/>
