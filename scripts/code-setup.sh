@@ -50,6 +50,8 @@ cd $BASE_DIR
 mkdir camkes
 cd camkes
 export GIT_SSL_NO_VERIFY=1
-repo init -u https://github.com/smaccm/phase3.git -m phase3.xml || true
-repo sync || true
-repo sync -d || true
+# NOTE: `repo` tool is in `repo` hence the absolute path
+# FIXME: add to $PATH instead
+/repo init -u https://github.com/smaccm/phase3.git -m phase3.xml -b 2021-update || true
+/repo sync || true
+/repo sync -d || true

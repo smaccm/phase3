@@ -26,11 +26,9 @@ echo "************************************************************"
 rm -rf /var/lib/apt/lists/*
 
 sudo apt-get update
-sudo apt-get -y install python-software-properties software-properties-common
-sudo add-apt-repository -y ppa:webupd8team/java # java
+sudo apt-get -y install software-properties-common
 sudo add-apt-repository -y ppa:hvr/ghc          # ghc, cabal, happy, alex
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test # gcc-4.8
-sudo add-apt-repository -y ppa:george-edison55/precise-backports # cmake
 sudo apt-get update
 
 
@@ -38,56 +36,43 @@ echo "************************************************************"
 echo "Install GHC, Cabal, Alex, Happy"
 echo "************************************************************"
 
-sudo apt-get install -y ghc-7.8.4 cabal-install-1.22 alex-3.1.4 happy-1.19.5
-
+sudo apt-get install -y ghc cabal-install alex happy
 
 echo "************************************************************"
-echo "Install Java 8"
+echo "Install Java"
 echo "************************************************************"
 
-# we have to do this to say yes to the java 8 license agreement
-echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
-echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
-sudo apt-get -y install oracle-java8-installer
+sudo apt install -y default-jre
 
 
 echo "************************************************************"
 echo "Install other apt software"
 echo "************************************************************"
 
-sudo apt-get -y --force-yes install \
-    lib32ncurses5 \
+sudo apt-get -y install \
+    lib32ncurses5-dev \
     libev-dev \
-    gcc-4.8 \
+    gcc \
     git \
     libgmp3-dev \
     zlib1g-dev \
     make \
     libtinfo-dev \
     libncurses5-dev \
-    realpath \
+    coreutils \
     gcc-arm-linux-gnueabi \
-    python-pip \
+    python3-pip \
     libxml2-utils \
     python2.7-dev \
     cmake \
     ninja-build \
     libsqlite3-dev \
     libcunit1-dev \
-    clang-3.4 \
-    expect
+    clang \
+    expect \
+    wget
 
-# check for ubuntu version before installing uboot tools
-string=`lsb_release -c`;
-
-if [[ $string == *"precise"* ]]
-then
-  echo "Ubuntu 12.04";
-  sudo apt-get -y --force-yes install uboot-mkimage
-else
-  echo "Ubuntu > 12.04"
-  sudo apt-get -y --force-yes install u-boot-tools
-fi
+sudo apt-get -y install u-boot-tools
 
 echo "************************************************************"
 echo "Install stack"
