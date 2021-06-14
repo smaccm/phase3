@@ -9,4 +9,4 @@ ENV PATH /.cabal/bin:$PATH:/opt/ghc/bin
 ENV LANG C.UTF-8
 RUN ./system-setup.sh
 RUN ./code-setup.sh
-#RUN ./code-build.sh
+RUN ./code-build.sh
