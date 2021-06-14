@@ -27,28 +27,18 @@ rm -rf /var/lib/apt/lists/*
 
 sudo apt-get update
 sudo apt-get -y install software-properties-common
-sudo add-apt-repository -y ppa:hvr/ghc          # ghc, cabal, happy, alex
-sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test # gcc-4.8
+sudo add-apt-repository -y ppa:hvr/ghc # ghc, cabal, happy, alex
 sudo apt-get update
 
 
 echo "************************************************************"
-echo "Install GHC, Cabal, Alex, Happy"
-echo "************************************************************"
-
-sudo apt-get install -y ghc cabal-install alex happy
-
-echo "************************************************************"
 echo "Install Java"
 echo "************************************************************"
-
 sudo apt install -y default-jre
-
 
 echo "************************************************************"
 echo "Install other apt software"
 echo "************************************************************"
-
 sudo apt-get -y install \
     lib32ncurses5-dev \
     libev-dev \
@@ -61,7 +51,7 @@ sudo apt-get -y install \
     libncurses5-dev \
     coreutils \
     gcc-arm-linux-gnueabi \
-    python3-pip \
+    python-pip \
     libxml2-utils \
     python2.7-dev \
     cmake \
@@ -70,15 +60,22 @@ sudo apt-get -y install \
     libcunit1-dev \
     clang \
     expect \
-    wget
+    wget \
+    vim \
+    u-boot-tools \
+    build-essential \
+    curl \
+    libedit2
 
-sudo apt-get -y install u-boot-tools
+echo "************************************************************"
+echo "Install GHC, Cabal, Alex, Happy"
+echo "************************************************************"
+apt-get install ghc-7.8.4 cabal-install-1.22 alex-3.1.4 happy-1.19.5
 
 echo "************************************************************"
 echo "Install stack"
 echo "************************************************************"
-mkdir -p $PWD/.local/bin
-curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C $PWD/.local/bin '*/stack'
+curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C /usr/bin '*/stack'
 
 echo "************************************************************"
 echo "Install gcc-arm-embedded"
@@ -87,4 +84,5 @@ echo "************************************************************"
 mkdir -p gcc-arm-embedded
 wget https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q2-update/+download/gcc-arm-none-eabi-4_9-2015q2-20150609-linux.tar.bz2 -O- | tar xjf - -C gcc-arm-embedded
 
+# TODO: these paths might be obsolete?  
 echo "$PWD:$PWD/.local/bin:$(echo $PWD/gcc-arm-embedded/*/bin):/opt/ghc/7.8.4/bin:/opt/cabal/1.22/bin:/opt/alex/3.1.4/bin:/opt/happy/1.19.5/bin:$PATH" >PATH
