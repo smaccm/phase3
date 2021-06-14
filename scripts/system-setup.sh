@@ -19,9 +19,10 @@ echo "************************************************************"
 cabal update
 cabal install 'MissingH == 1.3.*'
 cabal install data-ordlist
-cabal install split
-cabal install mtl
+cabal install split-0.2.3.1
+cabal install mtl-2.2.1
 cabal install base-compat-0.9.0
+cabal install aeson-1.0.0.0
 
 echo "************************************************************"
 echo "Install pip software"

@@ -54,7 +54,7 @@ export GIT_SSL_NO_VERIFY=1
 # and repo doesn't undertand tags. Hence we have out own clone
 # of the repo, with specific tags as branches...
 repo init -u https://github.com/smaccm/phase3.git -m phase3.xml\
- -b 2021-update --repo-branch=branch-v2_0 --no-repo-verify\
+ -b 2021-update --repo-branch=branch-v1.12.37 --no-repo-verify\
  --repo-url=https://github.com/podhrmic/git-repo.git
 repo sync
 repo sync -d
