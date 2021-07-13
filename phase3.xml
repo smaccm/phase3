@@ -32,7 +32,7 @@
     <linkfile dest="libs/libusbdrivers" src="libusbdrivers"/>
   </project>
   <project name="pruner.git" path="tools/pruner" revision="c1f6664f7f0bc04ac60b5e8b41200b1a09da7eda" upstream="master"/>
-  <project name="seL4.git" path="kernel" revision="941edc0883305316d54aa0f35010939dd74ef2d8" upstream="master">
+  <project name="seL4.git" path="kernel" revision="5.1.0" upstream="master">
     <linkfile dest="libs/libsel4" src="libsel4"/>
   </project>
   <project name="seL4_libs.git" path="projects/seL4_libs" revision="6db12d3962eac8a0a635df952633dee63c16b2f7" upstream="master">
