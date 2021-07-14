@@ -50,6 +50,6 @@ cd $BASE_DIR
 mkdir camkes
 cd camkes
 export GIT_SSL_NO_VERIFY=1
-repo init -u https://github.com/smaccm/phase3.git -m phase3.xml -b code-upgrade
+repo init -u https://github.com/smaccm/phase3.git -m phase3.xml -b master
 repo sync
 repo sync -d
