@@ -2,3 +2,5 @@ output.txt
 haskell-platform-2014.2.0.0-unknown-linux-x86_64.tar.gz
 smaccmpilot-build
 camkes
+tk1-image
+pixhawk-image.px4
