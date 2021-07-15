@@ -1,19 +1,8 @@
 #!/bin/bash
 
-if [[ ! -e main.sh ]]
-then
-    echo "Must be run in phase3/scripts directory"
-    exit 1
-fi
-
 cd ..
 BASE_DIR=$PWD
 set -e
-
-if [[ $TRAVIS != "true" ]] && [ -e "PATH" ];
-then
-    export PATH=`cat PATH`
-fi
 
 # TODO: Find better location for phase3 ramses
 echo "************************************************************"

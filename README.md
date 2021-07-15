@@ -5,7 +5,7 @@ This is the repository for the phase 3 demo software and build support. The scri
 
 Build the docker image with:
 ```
-$ docker build -t smaccm-build .
+$ docker build -t smaccmpilot-build .
 ```
 
 Alternatively, pull the image from dockerhub with:
