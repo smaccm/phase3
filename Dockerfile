@@ -56,6 +56,7 @@ RUN apt-get install -y vim
 RUN apt-get install -y u-boot-tools
 RUN apt-get install -y python2
 RUN apt-get install -y libssl-dev
+RUN apt-get install -y cpio
 
 # "************************************************************"
 # "Install remaining cabal packages"
@@ -106,5 +107,8 @@ RUN ./code-setup.sh
 # "exec "./code-build.sh"
 # "************************************************************"
 RUN ./code-build-pixhawk-image.sh
-# NOTE: this fails...
-#RUN ./code-build-tk1.sh
+
+# "************************************************************"
+# "Build CAmkES
+# "************************************************************"
+RUN ./code-build-tk1.sh
