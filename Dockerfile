@@ -97,6 +97,12 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN python -m pip install jinja2 ply pyelftools tempita six plyplus orderedset
 
 # "************************************************************"
+# "Init Git"
+# "************************************************************"
+RUN git config --global user.email "smaccmpilot@smaccmpilot.com"
+RUN git config --global user.name "smaccmpilot"
+
+# "************************************************************"
 # "exec "./code-setup.sh"
 # "************************************************************"
 ADD scripts /opt/scripts
