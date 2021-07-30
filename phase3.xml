@@ -58,7 +58,7 @@
     <linkfile dest="tools/elfloader" src="elfloader-tool"/>
     <linkfile dest="tools/kbuild" src="kbuild-tool"/>
   </project>
-  <project name="smaccm.git" path="projects/smaccm" remote="smaccm" revision="a2cf60d06b2d127075466ae29e3f2dc1567027b2" upstream="develop">
+  <project name="smaccm.git" path="projects/smaccm" remote="smaccm" revision="2a6bb44df34889f7c40f4b59284c267720601cd6" upstream="develop">
     <linkfile dest="apps/smaccmpilot" src="models/Minitower"/>
     <linkfile dest="apps/smaccmpilot-tk1" src="models/smaccmpilot-tk1"/>
   </project>
