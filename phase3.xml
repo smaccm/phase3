@@ -35,7 +35,7 @@
   <project name="seL4.git" path="kernel" revision="598c9d1efc2b10c475a92fd5775d8280c766b77f" upstream="master">
     <linkfile dest="libs/libsel4" src="libsel4"/>
   </project>
-  <project name="seL4_libs.git" path="projects/seL4_libs" revision="6db12d3962eac8a0a635df952633dee63c16b2f7" upstream="master">
+  <project name="seL4_libs.git" path="projects/seL4_libs" revision="60c6d51324d32c70a70ceb6f7c3d548c7aab14aa" upstream="master">
     <linkfile dest="libs/libsel4muslcsys" src="libsel4muslcsys"/>
     <linkfile dest="libs/libsel4platsupport" src="libsel4platsupport"/>
     <linkfile dest="libs/libsel4utils" src="libsel4utils"/>
@@ -48,21 +48,21 @@
     <linkfile dest="libs/libsel4bench" src="libsel4bench"/>
     <linkfile dest="libs/libsel4allocman" src="libsel4allocman"/>
   </project>
-  <project name="seL4_projects_libs.git" path="projects/seL4_projects_libs" remote="seL4" revision="bc13ede38f4616ed24d35d1557cde4d021cc72e1" upstream="master">
+  <project name="seL4_projects_libs.git" path="projects/seL4_projects_libs" remote="seL4" revision="7caedcecdfcb3b96f79e0e30cdca8e635803f9ba" upstream="master">
     <linkfile dest="libs/libsel4dma" src="libsel4dma"/>
     <linkfile dest="libs/libsel4arm-vmm" src="libsel4arm-vmm"/>
     <linkfile dest="libs/libsel4vchan" src="libsel4vchan"/>
   </project>
-  <project name="seL4_tools.git" path="projects/seL4_tools" revision="fe5db52215e551771fe6662591edcacd727de0d9" upstream="master">
+  <project name="seL4_tools.git" path="projects/seL4_tools" revision="a9295b6efd52f0956040e0ff9e6674af867f2b61" upstream="master">
     <linkfile dest="tools/common" src="common-tool"/>
     <linkfile dest="tools/elfloader" src="elfloader-tool"/>
     <linkfile dest="tools/kbuild" src="kbuild-tool"/>
   </project>
-  <project name="smaccm.git" path="projects/smaccm" remote="smaccm" revision="a2cf60d06b2d127075466ae29e3f2dc1567027b2" upstream="develop">
+  <project name="smaccm.git" path="projects/smaccm" remote="smaccm" revision="2a6bb44df34889f7c40f4b59284c267720601cd6" upstream="develop">
     <linkfile dest="apps/smaccmpilot" src="models/Minitower"/>
     <linkfile dest="apps/smaccmpilot-tk1" src="models/smaccmpilot-tk1"/>
   </project>
-  <project name="util_libs.git" path="projects/util_libs" revision="1139f4facb089861aea3661d9be342262d1d6139" upstream="master">
+  <project name="util_libs.git" path="projects/util_libs" revision="accfcac9308f84535d842bbfe2b321ac1374e2c5" upstream="master">
     <linkfile dest="libs/libplatsupport" src="libplatsupport"/>
     <linkfile dest="libs/libcpio" src="libcpio"/>
     <linkfile dest="libs/libelf" src="libelf"/>
